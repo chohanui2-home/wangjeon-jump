@@ -38,7 +38,7 @@ button{font-family:inherit;cursor:pointer;border:none;padding:0;background:none;
   min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;
   padding:calc(5px + env(safe-area-inset-top)) 11px calc(62px + env(safe-area-inset-bottom));
 }
-.topbar{display:flex;align-items:center;gap:4px;padding:1px 0 4px;flex:0 0 auto}
+.topbar{display:flex;align-items:center;justify-content:center;padding:1px 0 2px;flex:0 0 auto}
 .topbar h1{
   flex:1 1 auto;min-width:0;margin:0;text-align:center;white-space:nowrap;
   font-size:clamp(17px,5.6vw,23px);font-weight:900;letter-spacing:-.055em;line-height:1.25;
@@ -54,6 +54,9 @@ button{font-family:inherit;cursor:pointer;border:none;padding:0;background:none;
 .iconbtn:active{transform:scale(.92)}
 .iconbtn svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .iconbtn.off{color:#cfc8e8}
+.toptools{display:flex;justify-content:flex-end;align-items:center;gap:6px;padding:0 1px 3px;flex:0 0 auto}
+.toptools .iconbtn{width:28px;height:28px;border-radius:10px}
+.toptools .iconbtn svg{width:15px;height:15px}
 .hud{
   flex:0 0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;
   background:#fff;border-radius:99px;box-shadow:0 8px 20px -8px rgba(120,100,200,.32);
@@ -175,20 +178,20 @@ button{font-family:inherit;cursor:pointer;border:none;padding:0;background:none;
 <body>
 <div class="app">
   <header class="topbar">
+    <h1><span class="hh">♡</span>왕전초 점프왕!<span class="hh">♡</span></h1>
+  </header>
+  <div class="toptools">
     <button class="iconbtn" id="sndBtn" type="button" aria-label="효과음 켜기/끄기">
       <svg id="sndOn" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.2L12 5.6v12.8L7.2 14.5H4z"/><path d="M15.6 8.6a4.6 4.6 0 0 1 0 6.8"/><path d="M18.2 6a8 8 0 0 1 0 12"/></svg>
       <svg id="sndOff" viewBox="0 0 24 24" aria-hidden="true" style="display:none"><path d="M4 9.5h3.2L12 5.6v12.8L7.2 14.5H4z"/><path d="M16 9.5l5 5M21 9.5l-5 5"/></svg>
     </button>
-    <h1><span class="hh">♡</span>왕전초 점프왕!<span class="hh">♡</span></h1>
-    <div class="topright" style="display:flex;gap:4px">
-      <button class="iconbtn" id="retryBtn" type="button" aria-label="다시하기">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.6-5.9"/><path d="M20 4.5V10h-5.4"/></svg>
-      </button>
-      <button class="iconbtn" id="pauseBtn" type="button" aria-label="일시정지">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5.5v13M15 5.5v13"/></svg>
-      </button>
-    </div>
-  </header>
+    <button class="iconbtn" id="retryBtn" type="button" aria-label="다시하기">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.6-5.9"/><path d="M20 4.5V10h-5.4"/></svg>
+    </button>
+    <button class="iconbtn" id="pauseBtn" type="button" aria-label="일시정지">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5.5v13M15 5.5v13"/></svg>
+    </button>
+  </div>
 
   <div class="hud">
     <div class="st"><span class="lb">별</span><span class="vl" id="hudCoins">0</span></div>
